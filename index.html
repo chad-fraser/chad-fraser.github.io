@@ -1,1 +1,23 @@
-Hello World
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <a href="#" title="Get some foo!" id="foo">Show me some foo</a>
+        <script>
+            var el = document.getElementById('foo');
+            el.onclick = showFoo;
+ 
+            function showFoo() {
+                $.get(
+                    "https://127.0.0.1:8000/",
+ 
+                    function(data) {
+                        alert('page content: ' + data);
+                    }
+                );
+            }
+        </script>
+    </body>
+</html>
